@@ -1,0 +1,119 @@
+page {
+  background-color: #f7f8fa;
+  height: 100%;
+  box-sizing: border-box;
+  --nutui-color-primary: #60a85f;
+  --nutui-searchbar-background: white;
+  --nutui-grid-item-content-bg-color: white;
+  --nutui-hoverbutton-item-background: white;
+  --nutui-hoverbutton-item-background-active: #f6f6f6;
+  --nutui-pagination-color: rgba(0, 0, 0, 0.88);
+  --nutui-pagination-item-border-color: transparent;
+  --nutui-pagination-disable-background-color: transparent;
+  --nutui-tabs-titles-background-color: white;
+  --nutui-color-mask-part: #e0e0e0;
+  --nutui-segmented-item-color: rgba(0, 0, 0, 0.88);
+  --nutui-segmented-active-background: white;
+}
+
+a {
+  color: #0f829c;
+}
+
+.link {
+  color: #0f829c;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.rock {
+  background: url(https://pocketmortys.net/media/com_pocketmortys/images/types.png) no-repeat center left;
+  background-size: 20px;
+  background-position: top 1px left;
+  padding-left: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 1px;
+  line-height: 19px;
+  min-height: 20px;
+}
+
+.paper {
+  background: url(https://pocketmortys.net/media/com_pocketmortys/images/types.png) no-repeat center left;
+  background-size: 20px;
+  background-position: top -19px left;
+  padding-left: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 1px;
+  line-height: 19px;
+  min-height: 20px;
+}
+
+.scissors {
+  background: url(https://pocketmortys.net/media/com_pocketmortys/images/types.png) no-repeat center left;
+  background-size: 20px;
+  background-position: top -41px left;
+  padding-left: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 1px;
+  line-height: 19px;
+  min-height: 20px;
+}
+
+.buff {
+  display: flex;
+  background-image: url(https://pocketmortys.net/media/com_pocketmortys/images/buff.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left center;
+  padding-left: 24px;
+}
+
+.debuff {
+  display: flex;
+  background-image: url(https://pocketmortys.net/media/com_pocketmortys/images/debuff.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: left center;
+  padding-left: 24px;
+}
+
+.dimensions.Mortyland {
+  color: #217d13;
+}
+
+.dimensions.Mortopia,
+.dimensions.AnimeDimension,
+.dimensions.AnatomyPark,
+.dimensions.Froopyland {
+  color: #caa503;
+}
+
+.dimensions.PlumbuboPrime51b {
+  color: #f705f7 !important;
+}
+
+.dimensions.GFMortanic {
+  color: #6b93a4 !important;
+}
+
+.asset-icon {
+  width: 36px;
+  height: 36px;
+  vertical-align: top;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  image {
+    margin-right: 5px;
+  }
+}
