@@ -6,21 +6,22 @@ import { ArrowRight } from "@nutui/icons-react-taro";
 import "./index.scss";
 
 const NAVS: { title: string; path?: string }[] = [
-  {
-    title: "伤害",
-  },
-  {
-    title: "服从性",
-  },
-  {
-    title: "EV值",
-  },
+  // {
+  //   title: "伤害",
+  // },
+  // {
+  //   title: "服从性",
+  // },
+  // {
+  //   title: "EV值",
+  // },
   {
     title: "IV值",
+    path: "/pages/calculators/ivs/index",
   },
-  {
-    title: "属性值",
-  },
+  // {
+  //   title: "属性值",
+  // },
 ];
 
 export default function Calculators() {

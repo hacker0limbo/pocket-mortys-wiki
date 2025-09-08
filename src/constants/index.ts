@@ -1,8 +1,6 @@
-import commonImg from "@/img/common.png";
-import epicImg from "@/img/epic.png";
-import rareImg from "@/img/rare.png";
-import exoticImg from "@/img/exotic.png";
 import { POCKET_MORTYS_MEDIA_URL } from "@/api/request";
+
+const CLOUD_BASE_URL = "cloud://cloudbase-0grapuis2753b5c0.636c-cloudbase-0grapuis2753b5c0-1375677752";
 
 export const PAGE_SIZE = 10;
 
@@ -52,7 +50,7 @@ export const RARITIES: Record<
 > = {
   // 普通
   Common: {
-    img: commonImg,
+    img: `${CLOUD_BASE_URL}/common.png`,
     color: {
       primary: "#85efff",
       light: "rgba(22, 171, 255, 0.1)",
@@ -61,7 +59,7 @@ export const RARITIES: Record<
   },
   // 稀有
   Rare: {
-    img: rareImg,
+    img: `${CLOUD_BASE_URL}/rare.png`,
     color: {
       primary: "#00eb00",
       light: "rgba(46, 179, 46, 0.1)",
@@ -70,7 +68,7 @@ export const RARITIES: Record<
   },
   // 史诗
   Epic: {
-    img: epicImg,
+    img: `${CLOUD_BASE_URL}/epic.png`,
     color: {
       primary: "#ffff01",
       light: "rgba(255, 255, 1, 0.15)",
@@ -79,7 +77,7 @@ export const RARITIES: Record<
   },
   // 天外
   Exotic: {
-    img: exoticImg,
+    img: `${CLOUD_BASE_URL}/exotic.png`,
     color: {
       primary: "#f091ff",
       light: "rgba(240, 145, 255, 0.2)",
@@ -125,3 +123,23 @@ export type GAME_MODE = "campaign" | "multiplayer";
 
 export const SIDES = ["Up", "Down", "Side"] as const;
 export const ORIENTATIONS = ["Front", "Back"] as const;
+
+export const RAIDS_DIFFICULTY_LEVELS = [
+  "松弛",
+  "湿海绵",
+  "可笑",
+  "轻度危险",
+  "川辣！",
+  "疯狂！！",
+  "恐慌！",
+  "必死无疑",
+  "致命",
+  "痛苦世界",
+  "无可救药",
+  "荒唐可笑",
+  "难以置信",
+  "困难",
+  "非常困难",
+  "极其困难",
+  "极端",
+];

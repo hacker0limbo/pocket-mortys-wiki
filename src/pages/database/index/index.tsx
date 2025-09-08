@@ -90,8 +90,8 @@ export default function Database() {
                 });
               } else {
                 Taro.showToast({
-                  title: "开发中敬请期待",
-                  icon: "error",
+                  title: "暂不支持小程序, 请前往官网查看具体内容",
+                  icon: "none",
                 });
               }
             }}

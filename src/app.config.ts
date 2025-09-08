@@ -63,9 +63,41 @@ export default defineAppConfig({
       root: "pages/guides/index",
       pages: ["index"],
     },
+    {
+      root: "pages/guides/battling",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/best-mortys",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/club-rick",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/fight-pits",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/ivs-evs",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/raids",
+      pages: ["index"],
+    },
+    {
+      root: "pages/guides/morty-combinations",
+      pages: ["index"],
+    },
     // calculators
     {
       root: "pages/calculators/index",
+      pages: ["index"],
+    },
+    {
+      root: "pages/calculators/ivs",
       pages: ["index"],
     },
   ],
