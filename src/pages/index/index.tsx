@@ -1,6 +1,6 @@
 import { View, Image } from "@tarojs/components";
 import Taro, { setClipboardData } from "@tarojs/taro";
-import { Cell } from "@nutui/nutui-react-taro";
+import { Cell, SafeArea } from "@nutui/nutui-react-taro";
 import { ArrowRight, Tips } from "@nutui/icons-react-taro";
 import { POCKET_MORTYS_BASE_URL } from "@/api/request";
 
@@ -29,6 +29,10 @@ const NAVS = [
   {
     title: "计算器",
     path: "/pages/calculators/index/index",
+  },
+  {
+    title: "强度榜",
+    path: "/pages/guides/morty-tiers/index",
   },
   {
     title: "常见问题解答",
@@ -107,6 +111,8 @@ export default function Index() {
           />
         ))}
       </Cell.Group>
+
+      <SafeArea position="bottom" />
     </View>
   );
 }

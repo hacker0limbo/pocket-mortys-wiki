@@ -42,6 +42,7 @@ const NAVS: { title: string; path?: string }[] = [
   },
   {
     title: "莫蒂强度榜",
+    path: "/pages/guides/morty-tiers/index",
   },
   // {
   //   title: "新手指南",

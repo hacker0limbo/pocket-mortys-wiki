@@ -1,7 +1,6 @@
 import { POCKET_MORTYS_MEDIA_URL } from "@/api/request";
 
-const CLOUD_BASE_URL = "cloud://cloudbase-0grapuis2753b5c0.636c-cloudbase-0grapuis2753b5c0-1375677752";
-
+export const CLOUD_BASE_URL = "cloud://cloudbase-0grapuis2753b5c0.636c-cloudbase-0grapuis2753b5c0-1375677752";
 export const PAGE_SIZE = 10;
 
 // 维度

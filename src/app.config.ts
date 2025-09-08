@@ -91,6 +91,10 @@ export default defineAppConfig({
       root: "pages/guides/morty-combinations",
       pages: ["index"],
     },
+    {
+      root: "pages/guides/morty-tiers",
+      pages: ["index"],
+    },
     // calculators
     {
       root: "pages/calculators/index",
