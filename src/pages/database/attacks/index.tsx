@@ -14,8 +14,8 @@ import {
   TableColumnProps,
 } from "@nutui/nutui-react-taro";
 import { ArrowLeft, ArrowRight, Ask, PickedUp } from "@nutui/icons-react-taro";
-import { PAGE_SIZE } from "@/constants";
 import { parseAttackName, parseAttackNumber } from "@/utils";
+import { useSettingsStore } from "@/store";
 import AttackNote from "./AttackNote";
 
 import "./index.scss";
@@ -25,9 +25,10 @@ export default function Attacks() {
   const [searchedAttacks, setSearchedAttacks] = useState<Attack[]>([]);
   const [showAttackNote, setShowAttackNote] = useState(false);
   const [current, setCurrent] = useState<number>(1);
+  const pageSize = useSettingsStore((state) => state.tablePageSize);
   const displayedAttacks = useMemo(
-    () => searchedAttacks.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE),
-    [searchedAttacks, current]
+    () => searchedAttacks.slice((current - 1) * pageSize, current * pageSize),
+    [searchedAttacks, current, pageSize]
   );
 
   const columns: TableColumnProps[] = [
@@ -145,10 +146,11 @@ export default function Attacks() {
           data={displayedAttacks}
           summary={
             <Pagination
-              mode="simple"
+              // mode="simple"
+              ellipse
               prev={<ArrowLeft />}
               next={<ArrowRight />}
-              pageSize={PAGE_SIZE}
+              pageSize={pageSize}
               total={searchedAttacks.length}
               value={current}
               onChange={(page) => {

@@ -58,6 +58,10 @@ export default defineAppConfig({
       root: "pages/settings/about",
       pages: ["index"],
     },
+    {
+      root: "pages/settings/changelog",
+      pages: ["index"],
+    },
     // guides
     {
       root: "pages/guides/index",

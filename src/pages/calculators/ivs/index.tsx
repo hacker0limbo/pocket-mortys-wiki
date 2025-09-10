@@ -7,6 +7,7 @@ import {
   Popup,
   Radio,
   SafeArea,
+  SearchBar,
   Space,
   Table,
   TableColumnProps,
@@ -71,6 +72,7 @@ export default function () {
   const [form] = Form.useForm();
   const [result, setResult] = useState<Result>();
   const [mortys, setMortys] = useState<Morty[]>([]);
+  const [searchedMortys, setSearchedMortys] = useState<Morty[]>([]);
   const [selectedMortyAssetId, setSelectedMortyAssetId] = useState<string>("");
   const [showMortyList, setShowMortyList] = useState(false);
   const selectedMorty = useMemo(
@@ -119,6 +121,7 @@ export default function () {
       .then((res) => {
         const ms = res.result?.data?.data;
         setMortys(ms);
+        setSearchedMortys(ms);
         // 默认选中第一个
         setSelectedMortyAssetId(ms[0]?.assetid);
       })
@@ -291,12 +294,33 @@ export default function () {
         closeable
         onClose={() => {
           setShowMortyList(false);
+          // 重置搜索结果
+          setSearchedMortys(mortys);
         }}
       >
         <ScrollView style={{ maxHeight: 600, padding: 16, boxSizing: "border-box" }} scrollY>
+          <SearchBar
+            placeholder="搜索莫蒂名称或者编号"
+            onClear={() => {
+              setSearchedMortys(mortys);
+            }}
+            onSearch={(value) => {
+              if (value) {
+                setSearchedMortys((ms) =>
+                  ms.filter(({ name, number }) => {
+                    const nameText = parseMortyName(name);
+                    return nameText.includes(value) || number.toString() === value;
+                  })
+                );
+              } else {
+                setSearchedMortys(mortys);
+              }
+            }}
+          />
+
           <Cell.Group>
             <VirtualList
-              list={mortys}
+              list={searchedMortys}
               itemHeight={40}
               itemRender={({ assetid, name, number }: Morty, index) => (
                 <Cell

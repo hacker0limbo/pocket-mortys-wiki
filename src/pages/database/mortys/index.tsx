@@ -17,14 +17,16 @@ import {
 import Taro from "@tarojs/taro";
 import * as cheerio from "cheerio";
 import { POCKET_MORTYS_MEDIA_URL } from "@/api/request";
-import { PAGE_SIZE, DIMENSIONS, RARITIES, MORTY_TYPES } from "@/constants";
+import { DIMENSIONS, RARITIES, MORTY_TYPES } from "@/constants";
 import { Link } from "@/components";
 import { ArrowLeft, ArrowRight } from "@nutui/icons-react-taro";
 import { parseMortyName, parseMortyRarity, parseMortyType } from "@/utils";
+import { useSettingsStore } from "@/store";
 
 import "./index.scss";
 
 export default function Mortys() {
+  const pageSize = useSettingsStore((state) => state.tablePageSize);
   const [mortys, setMortys] = useState<Morty[]>([]);
   const [current, setCurrent] = useState<number>(1);
   const [selectedTypes, setSelectedTypes] = useState<string[]>(Object.keys(MORTY_TYPES));
@@ -47,8 +49,8 @@ export default function Mortys() {
   );
   // 当前页展示的莫蒂
   const displayedMortys = useMemo(() => {
-    return filteredMortys.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
-  }, [filteredMortys, current]);
+    return filteredMortys.slice((current - 1) * pageSize, current * pageSize);
+  }, [filteredMortys, current, pageSize]);
 
   const columns: TableColumnProps[] = [
     { key: "id", title: "#" },
@@ -287,8 +289,16 @@ export default function Mortys() {
       </Menu>
       <View className="container">
         <Cell style={{ marginTop: 12 }}>
-          共检索到 {filteredMortys.length} 条莫蒂, 这里可以查看莫蒂
-          <Link copyText="https://pocketmortys.net/guides/morty-tiers">强度表</Link>
+          共检索到 {filteredMortys.length} 条莫蒂, 这里可以查看
+          <Link
+            onClick={() => {
+              Taro.navigateTo({
+                url: "/pages/guides/morty-tiers/index",
+              });
+            }}
+          >
+            莫蒂强度表
+          </Link>
         </Cell>
 
         {mortys.length ? (
@@ -298,10 +308,10 @@ export default function Mortys() {
             data={displayedMortys}
             summary={
               <Pagination
-                mode="simple"
+                // mode="simple"
                 prev={<ArrowLeft />}
                 next={<ArrowRight />}
-                pageSize={PAGE_SIZE}
+                pageSize={pageSize}
                 total={filteredMortys.length}
                 onChange={(currentPage) => {
                   setCurrent(currentPage);

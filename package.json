@@ -61,7 +61,8 @@
     "cheerio": "^1.1.2",
     "lodash-es": "^4.17.21",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
